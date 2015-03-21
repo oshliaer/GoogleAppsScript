@@ -1,5 +1,5 @@
 /**
- * Returns info about sheet. p can be "CUR", "ALL". f should be
+ * Returns info about sheet. p can be 'CUR', 'ALL'. f should be
  * 'getFrozenColumns', 'getFrozenRows', 'getIndex', 'getLastColumn',
  * 'getLastRow', 'getMaxColumns', 'getMaxRows', 'getName', 'getSheetId',
  * 'getSheetName', 'isSheetHidden'
