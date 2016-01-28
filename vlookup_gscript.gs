@@ -7,12 +7,12 @@ function VLU() {
   var DataSheet = SpreadsheetApp.openById("1Xdws6Vr6YVXuj19mvpOvkpJokOfY2T7Sh1aMpous_Xw").getSheetByName("Data").getDataRange().getValues();
     
   //Дата выгрузки новых данных
-  var Date = SpreadsheetApp.openById("1Xdws6Vr6YVXuj19mvpOvkpJokOfY2T7Sh1aMpous_Xw").getSheetByName("Data").getRange("B2").getValue();
+  var WhatDate = SpreadsheetApp.openById("1Xdws6Vr6YVXuj19mvpOvkpJokOfY2T7Sh1aMpous_Xw").getSheetByName("Data").getRange("B2").getValue();
     
   //1. Определить диапазон по значению даты, куда нужно будет вставлять данные
   var Template = ss.getSheetByName("1. Win").getDataRange().getValues();
   for(var j=0; j<Template.length; j++){
-    if(Template[j][0]==Date){        
+    if(Template[j][0]==WhatDate){        
       var PlaceForData = Template[j][1]; 
 
       
