@@ -8,8 +8,8 @@ function myFind() {
       for(var k=0, kLen=searchData[0].length; k<kLen; k++) {
         var find = findData;
         if(find == searchData[j][k]) {
-          rowNum.push([j+1]);
-          collNum.push([k+2]);
+          rowNum = j+1;
+          collNum = k+2;
         }
       }
     }
