@@ -8,7 +8,6 @@ function VLU2() {
   for (var sheetId = 0; sheetId<sheets.length; sheetId++){
     if(sheets[sheetId].getSheetName() == "List"){continue;}
       var SheetName = sheets[sheetId].getRange("A1").getValues();
-      for(var i=0, iLen=SheetName.length; i<iLen; i++) {  
         for(var j=0, jLen=DataSheet.length; j<jLen; j++) {
             if(SheetName == DataSheet[j][0]) {
               var rowNum = j+1;
@@ -17,5 +16,4 @@ function VLU2() {
             }
         }
       }                            
-  }        
 }
