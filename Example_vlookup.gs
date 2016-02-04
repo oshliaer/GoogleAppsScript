@@ -9,7 +9,7 @@ function myFind() {
         var find = findData;
         if(find == searchData[j][k]) {
           rowNum.push([j+1]);
-          collNum.push([k+1]);
+          collNum.push([k+2]);
         }
       }
     }
