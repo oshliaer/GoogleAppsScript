@@ -1,41 +1,21 @@
-function VLU() {
-
+function VLU2() {
+  
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheets = ss.getSheets();
-  
-  //Таблица с данными для поиска значений
+  //Таблица с данными для поиска значений  
   var DataSheet = SpreadsheetApp.openById("1Xdws6Vr6YVXuj19mvpOvkpJokOfY2T7Sh1aMpous_Xw").getSheetByName("Data").getDataRange().getValues();
-    
-  //Дата выгрузки новых данных
-  var WhatDate = SpreadsheetApp.openById("1Xdws6Vr6YVXuj19mvpOvkpJokOfY2T7Sh1aMpous_Xw").getSheetByName("Data").getRange("B2").getValue();
-    
-  //1. Определить диапазон по значению даты, куда нужно будет вставлять данные
-  var Template = ss.getSheetByName("1. Win").getDataRange().getValues();
-  for(var j=0; j<Template.length; j++){
-    if(Template[j][0]==WhatDate){        
-      var PlaceForData = Template[j][1]; 
-
-      
-      
-    }
-  }
-  
-  //2. Найти название вкладки в таблице с данными, скопировать значения
+  var Data_row = ss.getSheetByName("List").getRange("D2").getValue();
   for (var sheetId = 0; sheetId<sheets.length; sheetId++){
     if(sheets[sheetId].getSheetName() == "List"){continue;}
       var SheetName = sheets[sheetId].getRange("A1").getValues();
-      for(var i=0; i<DataSheet.length; i++){
-        if(DataSheet[i][0]==SheetName){        
-        var getdata 
-    
-        
-        
-  //3. Вставить данные        
-       ss.getRange(PlaceForData).setValues(getdata);
-          
-          
-          
-       }    
-     }
-  }
+      for(var i=0, iLen=SheetName.length; i<iLen; i++) {  
+        for(var j=0, jLen=DataSheet.length; j<jLen; j++) {
+            if(SheetName == DataSheet[j][0]) {
+              var rowNum = j+1;
+              var GetData = SpreadsheetApp.openById("1Xdws6Vr6YVXuj19mvpOvkpJokOfY2T7Sh1aMpous_Xw").getSheetByName("Data").getRange(rowNum, 2, 1, 9).getValues();           
+              sheets[sheetId].getRange(Data_row,2,1,9).setValues(GetData);
+            }
+        }
+      }                            
+  }        
 }
