@@ -22,3 +22,4 @@ function VLU() {
       }                            
     } 
   ss.getSheetByName("Data").clear();
+}  
