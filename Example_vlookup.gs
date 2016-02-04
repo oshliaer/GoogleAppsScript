@@ -6,13 +6,13 @@ function myFind() {
   for(var i=1, iLen=findData.length; i<iLen; i++) {  
     for(var j=0, jLen=searchData.length; j<jLen; j++) {
       for(var k=0, kLen=searchData[0].length; k<kLen; k++) {
-        var find = findData[i][0];
+        var find = findData;
         if(find == searchData[j][k]) {
-          rowNum.push([find, j+1]);
-          collNum.push([find, k+1]);
+          rowNum.push([j+1]);
+          collNum.push([k+1]);
         }
       }
     }
   }
-  ss.getSheetByName('Data_grave').getRange(rowNum,collNum).setValue("wow");
+  ss.getSheetByName('Data_grave').getRange(rowNum,collNum).setValue("Hello world");
 }
